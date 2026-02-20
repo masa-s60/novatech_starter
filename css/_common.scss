@@ -1,0 +1,67 @@
+/*-------------------------------------------
+共通クラス
+-------------------------------------------*/
+@use 'setting' as s;
+@use 'sass:math';
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  color: s.$colorBlack;
+  overflow-x: hidden;
+}
+
+img, source {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*-------------------------------------------
+header
+-------------------------------------------*/
+
+.c-header {
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.4%;
+  width: 100%;
+  height: s.$headerHeight;
+
+  @include s.mq(tab) {
+    padding: 0 7%;
+    height: s.$headerHeight--sp;
+    background-color: s.$colorWhite;
+  }
+}
+
+.c-header__rogo {
+  @include s.mq(tab) {
+    width: 70px;
+    object-fit: contain;
+  }
+}
+
+.c-hamburger {
+  display: none;
+}
+
+.c-nav {
+  display: block;
+}
+
+.c-nav-list {
+  display: flex;
+  font-weight: bold;
+}
+
+.c-nav-list__item {
+  margin-right: 35px;
+}

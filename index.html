@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Nova Tech</title>
+    <meta name="description" content="未来を創る最先端のIT技術を提供" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="image/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="body">
+    <header class="c-header">
+      <img src="./image/logo-pc.png" alt="" class="c-header__rogo">
+      <button class="c-hamburger" type="button" aria-expanded="false">
+    	  <span class="c-hamburger__bar"></span>
+      </button>
+      <nav class="c-nav">
+        <ul class="c-nav-list">
+          <li class="c-nav-list__item"><a href="">SERVICE</a></li>
+          <li class="c-nav-list__item"><a href="">ABOUT</a></li>
+          <li class=""><a href="">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="p-main">
+      <section class="p-firstView">
+        <ul class="p-firstView__list">
+          <li class="p-firstView__item is-active">
+            <picture>
+              <source srcset="./image/slide01.png" media="(min-width: 821px)">
+              <img src="./image/sp-slide01.png" alt="未来を創る　最先端のIT技術を提供">
+            </picture>
+          </li>
+          <li class="p-firstView__item">
+            <picture>
+              <source srcset="./image/slide02.png" media="(min-width: 821px)">
+              <img src="./image/sp-slide02.png" alt="未来を創る　最先端のIT技術を提供">
+            </picture>
+          </li>
+          <li class="p-firstView__item">
+            <picture>
+              <source srcset="./image/slide03.png" media="(min-width: 821px)">
+              <img src="./image/sp-slide03.png" alt="未来を創る　最先端のIT技術を提供">
+            </picture>
+          </li>
+        </ul>
+
+        <div class="p-firstView__text">
+          <p class="p-firstView__text-copy">未来を創る</p>
+          <p>最先端のIT技術を提供</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/common.js" defer></script>
+    <script src="js/frontPage.js" defer></script>
+  </body>
+</html>
