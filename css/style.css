@@ -50,12 +50,13 @@ header
   }
 }
 
-.c-hamburger {
-  display: none;
-}
-
 .c-nav {
   display: block;
+}
+@media screen and (max-width: 821px) {
+  .c-nav {
+    display: none;
+  }
 }
 
 .c-nav-list {
@@ -151,4 +152,68 @@ header
 footer
 -------------------------------------------*/
 /*除算用にmathモジュールをインポート*/
-/* ここから記述します。 *//*# sourceMappingURL=style.css.map */
+/* ここから記述します。 */
+.c-hamburger {
+  --hamburger-bar-color: #18669e;
+  display: none;
+}
+@media screen and (max-width: 821px) {
+  .c-hamburger {
+    display: block;
+    position: relative;
+    z-index: 10;
+    width: 42px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.c-hamburger__bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: var(--hamburger-bar-color);
+  transition: 0.5s;
+}
+
+.c-hamburger__bar::before,
+.c-hamburger__bar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: var(--hamburger-bar-color);
+  transition: 0.5s;
+}
+
+.c-hamburger__bar::before {
+  top: -12px;
+  left: 0;
+  transform-origin: center center;
+}
+
+.c-hamburger__bar::after {
+  top: -24px;
+  left: 0;
+  transform-origin: center center;
+}
+
+.c-hamburger.is-open .c-hamburger__bar {
+  background-color: transparent;
+}
+
+.c-hamburger.is-open .c-hamburger__bar::before {
+  transform-origin: center center;
+  transform: rotate(45deg);
+}
+
+.c-hamburger.is-open .c-hamburger__bar::after {
+  top: -12px;
+  transform-origin: center center;
+  transform: rotate(-45deg);
+}/*# sourceMappingURL=style.css.map */
