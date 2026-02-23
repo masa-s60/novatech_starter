@@ -2,12 +2,23 @@
 /*除算用にmathモジュールをインポート*/
 @use "sass:math";
 
+.p-main {
+  @include s.mq(tab) {
+    padding-top: 72px;
+  }
+}
+
 /*-------------------------------------------
 スライドレイアウト
 -------------------------------------------*/
 .p-firstView {
   position: relative;
+  width: 100%;
   height: 720px;
+
+  @include s.mq(tab) {
+    height: 600px;
+  }
 }
 
 .p-firstView__list {
@@ -18,9 +29,18 @@
 
 .p-firstView__item {
   position: absolute;
+  width: 100%;
   height: 100%;
   opacity: 0;
   transition: opacity 5s ease-out;
+}
+
+.p-firstView__image img {
+  @include s.mq(tab) {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
 }
 
 .is-active {
@@ -37,9 +57,12 @@
   font-size: 40px;
   letter-spacing: 3px;
   line-height: 1.6;
-}
-
-.p-firstView__text-copy {
+  
+  @include s.mq(tab) {
+    top: 455px;
+    left: 20px;
+    font-size: 33px;
+  }
 }
 
 .p-firstView__text-copy::after {
@@ -53,6 +76,10 @@
   background-repeat: no-repeat;
   width: 27px;
   height: 27px;
+
+  @include s.mq(tab) {
+      top: 0px;
+  }
 }
 
 

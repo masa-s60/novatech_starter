@@ -24,36 +24,63 @@
 
   <body class="body">
     <header class="c-header">
-      <img src="./image/logo-pc.png" alt="" class="c-header__rogo">
+      <img src="./image/logo-pc.png" alt="" class="c-header__logo">
+      <nav class="c-header-nav">
+        <ul class="c-header-nav__list">
+          <li class="c-header-nav__item">
+            <a class="c-header-nav__link" href="">SERVICE</a>
+          </li>
+          <li class="c-header-nav__item">
+            <a class="c-header-nav__link" href="">ABOUT</a>
+          </li>
+          <li class="c-header-nav__item">
+            <a class="c-header-nav__link" href="">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
       <button class="c-hamburger" type="button" aria-expanded="false">
     	  <span class="c-hamburger__bar"></span>
       </button>
-      <nav class="c-nav">
-        <ul class="c-nav-list">
-          <li class="c-nav-list__item"><a href="">SERVICE</a></li>
-          <li class="c-nav-list__item"><a href="">ABOUT</a></li>
-          <li class=""><a href="">CONTACT</a></li>
-        </ul>
-      </nav>
+      <div class="c-drawer">
+        <nav class="c-drawer-nav">
+          <ul class="c-drawer-nav__list">
+            <li class="c-drawer-nav__item"><a href="">SERVICE</a></li>
+            <li class="c-drawer-nav__item"><a href="">ABOUT</a></li>
+            <li class="c-drawer-nav__item"><a href="">CONTACT</a></li>
+            <li class="c-drawer-nav__item"><a href="">利用規約</a></li>
+            <li class="c-drawer-nav__item"><a href="">プライバシーポリシー</a></li>
+            <li class="c-drawer-nav__item">
+              <div class="c-sns">
+                <a href="https://x.com/?lang=ja" class="c-sns__link">
+                  <img src="./image/x-img.png" alt="x" class="c-sns__img">
+                </a>
+                <a href="https://x.com/?lang=ja" class="c-sns__link">
+                  <img src="./image/insta-img.png" alt="instagram" class="c-sns__img">
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main class="p-main">
       <section class="p-firstView">
         <ul class="p-firstView__list">
           <li class="p-firstView__item is-active">
-            <picture>
+            <picture class="p-firstView__image">
               <source srcset="./image/slide01.png" media="(min-width: 821px)">
               <img src="./image/sp-slide01.png" alt="未来を創る　最先端のIT技術を提供">
             </picture>
           </li>
           <li class="p-firstView__item">
-            <picture>
+            <picture class="p-firstView__image">
               <source srcset="./image/slide02.png" media="(min-width: 821px)">
               <img src="./image/sp-slide02.png" alt="未来を創る　最先端のIT技術を提供">
             </picture>
           </li>
           <li class="p-firstView__item">
-            <picture>
+            <picture class="p-firstView__image">
               <source srcset="./image/slide03.png" media="(min-width: 821px)">
               <img src="./image/sp-slide03.png" alt="未来を創る　最先端のIT技術を提供">
             </picture>

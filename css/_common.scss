@@ -1,6 +1,3 @@
-/*-------------------------------------------
-共通クラス
--------------------------------------------*/
 @use 'setting' as s;
 @use 'sass:math';
 
@@ -27,7 +24,7 @@ header
 
 .c-header {
   position: fixed;
-  z-index: 5;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,14 +39,14 @@ header
   }
 }
 
-.c-header__rogo {
+.c-header__logo {
   @include s.mq(tab) {
     width: 70px;
     object-fit: contain;
   }
 }
 
-.c-nav {
+.c-header-nav {
   display: block;
 
   @include s.mq(tab) {
@@ -57,11 +54,66 @@ header
   }
 }
 
-.c-nav-list {
+.c-header-nav__list {
   display: flex;
   font-weight: bold;
 }
 
-.c-nav-list__item {
+.c-header-nav__item {
   margin-right: 35px;
+}
+
+/*-------------------------------------------
+header-drawer
+-------------------------------------------*/
+
+.c-drawer {
+  display: none;
+
+  @include s.mq(tab) {
+    display: block;
+    position: fixed;
+    top: 72px;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url(../image/overlay.png);
+    background-size: cover;
+    pointer-events: none;
+    visibility: hidden;
+    transition: left .3s ease-out, visibility 0s linear .3s;
+  }
+}
+
+.c-drawer.is-open {
+  left: 0;
+  pointer-events: auto;
+  visibility: visible;
+  transition: left .3s ease-out, visibility 0s;
+}
+
+.c-drawer-nav {
+  margin-top: 80px;
+  margin-left: 11.5%;
+}
+
+.c-drawer-nav__list {
+  color: s.$colorBlue;
+  font-weight: bold;
+}
+
+.c-drawer-nav__item {
+  margin-bottom: 40px;
+}
+
+.c-sns {
+  display: flex;
+  gap: 20px;
+}
+
+.c-sns__img {
+  display: block;
+  width: 30px;
+  height: 30px;
 }
