@@ -82,7 +82,7 @@ header-drawer
     background-size: cover;
     pointer-events: none;
     visibility: hidden;
-    transition: left .3s ease-out, visibility 0s linear .3s;
+    transition: left .3s ease-out, visibility 0s .3s;
   }
 }
 
@@ -116,4 +116,20 @@ header-drawer
   display: block;
   width: 30px;
   height: 30px;
+}
+
+/*-------------------------------------------
+main
+-------------------------------------------*/
+
+.c-section-title {
+  margin-bottom: 10px;
+  color: s.$colorBlue;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.c-section-text {
+  letter-spacing: 1px;
 }
