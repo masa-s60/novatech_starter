@@ -4,6 +4,8 @@
 
 .p-main {
   position: relative;
+  margin-bottom: 200px;
+
   @include s.mq(tab) {
     padding-top: 72px;
   }
@@ -17,7 +19,7 @@
   background-repeat: no-repeat;
   background-position: left 0px top 500px;
   background-size: 350px;
-  z-index: 1;
+  z-index: 0;
 }
 
 /*-------------------------------------------
@@ -78,23 +80,6 @@
   }
 }
 
-.p-firstView__text-copy::after {
-  content: "";
-  position: relative;
-  top: -4px;
-  display: inline-block;
-  margin-left: 9px;
-  background-image: url(../image/title-image.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 27px;
-  height: 27px;
-
-  @include s.mq(tab) {
-      top: 0px;
-  }
-}
-
 /*-------------------------------------------
 「信頼の技術とサポート」レイアウト
 -------------------------------------------*/
@@ -102,12 +87,20 @@
 .p-support {
   position: relative;
   z-index: 2;
-  margin: 100px;
+  margin: 100px 100px 200px 100px;
+
+  @include s.mq(tab) {
+    margin: 100px 30px;
+  }
 }
 
 .p-support__inner {
   display: flex;
   gap: 100px;
+
+  @include s.mq(tab) {
+    display: block;
+  }
 }
 
 .p-support__visual,
@@ -119,14 +112,42 @@
 
 .p-support__contents {
   gap: 200px;
+  @include s.mq(tab) {
+    gap: 30px;
+  }
+}
+
+.p-support__image {
+  transform: translateY(150px);
+  opacity: 0;
+  transition: opacity 1s ease-out, transform .5s ease-in-out;
+
+  @include s.mq(tab) {
+    max-width: 100%;
+    width: 500px;
+    margin: auto;
+  }
+}
+
+.p-support__image.is-active {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .p-support__image img {
   border-radius: 10px;
+  max-width: 100%;
+  // object-fit: cover;
 }
 
 .p-support__images {
   position: relative;
+
+  @include s.mq(tab) {
+    display: flex;
+    justify-content: space-between;
+    height: 280px;
+  }
 }
 
 .p-support__images--left {
@@ -136,6 +157,13 @@
   z-index: 0;
   width: 220px;
   height: 260px;
+
+  @include s.mq(tab) {
+    position: static;
+    width: 200px;
+    height: 200px;
+    transform: translate(-15px, 40px);
+  }
 }
 
 .p-support__images--left img,
@@ -152,16 +180,158 @@
   z-index: -1;
   width: 320px;
   height: 320px;
+
+  @include s.mq(tab) {
+    position: static;
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .u-bottom-margin {
   margin-bottom: 25px;
+  
+  @include s.mq(tab) {
+    margin-bottom: 10px;
+  }
 }
 
 /*-------------------------------------------
 「SERVICE」レイアウト
 -------------------------------------------*/
+.p-service {
+  background-color: #f7f8fa;
+}
 
+.l-service {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 100px;
+ }
+
+.l-service::before {
+  content: "";
+  position: absolute;
+  top: -8%;
+  background-image: url(../image/service-bg01.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 150px;
+
+  @include s.mq(tab) {
+    top: -1.5%;
+  }
+}
+
+.p-service__header {
+  margin-bottom: 50px;
+
+  @include s.mq(tab) {
+    margin-bottom: 25px;
+  }
+}
+
+.p-service__inner {
+  width: 85%;
+  max-width: 1080px;
+  margin: 0 auto;
+
+  @include s.mq(tab) {
+    width: 90%;
+  }
+}
+
+.p-service__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8%;
+
+  @include s.mq(tab) {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+.p-service__item {
+  transform: translateY(150px);
+  text-align: center;
+  width:  100%;
+  min-width: 0;
+  opacity: 0;
+  transition: opacity 1s ease-out, transform .5s ease-in-out;
+
+  @include s.mq(tab) {
+  }
+}
+
+.p-service__item.is-active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.p-service__image {
+  margin:0 auto 30px;
+
+  @include s.mq(tab) {
+    width: 350px;
+  }
+}
+
+.p-service__image img {
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 5px 5px 9px rgba(0,0,0,0.2);
+}
+
+.p-service__title {
+  font-size: 25px;
+  font-weight: bold;
+  color: s.$colorBlue;
+  letter-spacing: 2px;
+}
+
+.p-service__text {
+  margin: 15px 5px 30px 10px;
+  letter-spacing: 3px;
+  text-align: left;
+
+  @include s.mq(tab) {
+  }
+}
+
+.p-service__button {
+  margin: 0 auto;
+  max-width: 258px;
+  width: 100%;
+  background-color: s.$colorBtn;
+  border-radius: 50px;
+}
+
+.p-service__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.p-service__link-text {
+  margin-right: 20px;
+  color: s.$colorWhite;
+  font-size: 14px;
+}
+
+.p-service__link-image {
+  width: 40px;
+}
+
+.u-top-margin {
+  margin-top: 50px;
+
+  @include s.mq(tab) {
+    margin-top: 0;
+  }
+}
 
 /*-------------------------------------------
 「ABOUT」レイアウト
